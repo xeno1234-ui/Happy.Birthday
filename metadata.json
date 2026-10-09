@@ -1,0 +1,6 @@
+{
+  "name": "Starlight Birthday Wish Vault",
+  "description": "An interactive magical birthday experience featuring a passcode vault, mystical wish envelope, animated cat cart with candle blowing & cake slicing, and an ultra-detailed glowing memory tree.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

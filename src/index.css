@@ -1,0 +1,1578 @@
+@import "tailwindcss";
+
+/* Viewport and Double Scrollbar Prevention */
+html, body {
+  height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Elegant Slim Glassmorphic Scrollbar for Modals & Inner Containers */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.45);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+@keyframes leafSway {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(12deg) translateY(-4px);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+@keyframes catWalk {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+}
+
+@keyframes tailSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes wheelSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Vault Cinematic Keyframes */
+@keyframes vaultDoorSwing {
+  0% {
+    transform: perspective(1400px) rotateY(0deg);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  }
+  30% {
+    box-shadow: -15px 30px 70px rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    transform: perspective(1400px) rotateY(-108deg);
+    box-shadow: -40px 30px 90px rgba(0, 0, 0, 0.95);
+  }
+}
+
+@keyframes dialSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes chamberLightBeam {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes envelopeEmerge {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.8) translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes vaultPushIn {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+/* Slide 3: Cat Cart Slow Entrance (4.5s Off-Screen Entrance) */
+@keyframes slowCartRollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(max(-100vw, -750px));
+  }
+  6% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wheelRollIn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+
+@keyframes blowBtnPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@keyframes happyBirthdayGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(25px);
+    filter: blur(12px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.06) translateY(-4px);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* Elegant Aesthetic Typography Classes */
+.font-cinzel-decorative {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+}
+
+.font-great-vibes {
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+}
+
+/* Refined Smooth Golden Neon Drop-Shadow */
+.golden-neon-glow {
+  color: #fff8db;
+  text-shadow:
+    0 0 10px #ffd700,
+    0 0 20px #ffa500,
+    0 0 30px #ff8c00;
+}
+
+/* Subtle Shimmer/Sparkle Dynamic Animation for Glowing Header */
+@keyframes goldenNeonShimmer {
+  0%, 100% {
+    text-shadow:
+      0 0 10px #ffd700,
+      0 0 20px #ffa500,
+      0 0 30px #ff8c00;
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.45));
+  }
+  50% {
+    text-shadow:
+      0 0 14px #ffe600,
+      0 0 25px #ffae00,
+      0 0 38px #ff7b00,
+      0 0 50px rgba(255, 140, 0, 0.4);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.7));
+  }
+}
+
+.animate-neon-shimmer {
+  animation: goldenNeonShimmer 3s ease-in-out infinite;
+}
+
+/* Soft Screen-Glow / Particle Aura Triggered on Candle Blow */
+@keyframes screenAuraGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  30% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+.animate-screen-aura {
+  animation: screenAuraGlow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Floating Party Balloons Rising from Bottom */
+@keyframes balloonRiseUp {
+  0% {
+    transform: translateY(110vh) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  88% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-115vh) rotate(14deg);
+    opacity: 0;
+  }
+}
+
+@keyframes balloonSway {
+  0%, 100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+/* Stylized Knife Slicing Into Top Cake Layer */
+@keyframes knifeSliceIntoCake {
+  0% {
+    transform: translate(375px, 20px) rotate(-32deg);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(355px, 50px) rotate(-18deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(335px, 92px) rotate(4deg);
+    opacity: 1;
+  }
+  85% {
+    transform: translate(330px, 112px) rotate(8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(325px, 128px) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+.animate-knife-cut-cake {
+  animation: knifeSliceIntoCake 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Subtle SVG Smoke Wisps Drifting Upward from Wicks */
+@keyframes smokeWispRise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.6);
+  }
+  25% {
+    opacity: 0.85;
+  }
+  70% {
+    opacity: 0.5;
+    transform: translateY(-35px) scale(1.2) translateX(4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-70px) scale(1.6) translateX(10px);
+  }
+}
+
+.animate-smoke-wisp-1 {
+  animation: smokeWispRise 2.8s ease-out infinite;
+}
+.animate-smoke-wisp-2 {
+  animation: smokeWispRise 3.2s ease-out 0.4s infinite;
+}
+.animate-smoke-wisp-3 {
+  animation: smokeWispRise 2.9s ease-out 0.8s infinite;
+}
+
+/* Button Shimmer Micro-Feedback */
+@keyframes shimmerGlow {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+/* Cake Slice Slides Forward Cleanly (Capped at scale 1.08 max to stay within viewport bounds) */
+@keyframes cakeSliceFlyToScreen {
+  0% {
+    transform: translate(0, 0) scale(0.92);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, -10px) scale(1);
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.6));
+    opacity: 1;
+  }
+  70% {
+    transform: translate(0, -20px) scale(1.08);
+    filter: drop-shadow(0 20px 45px rgba(212, 175, 55, 0.45));
+    opacity: 1;
+  }
+  90% {
+    transform: translate(0, -22px) scale(1.08);
+    filter: drop-shadow(0 24px 50px rgba(255, 230, 150, 0.65));
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(0, -24px) scale(1.05);
+    filter: drop-shadow(0 25px 60px rgba(255, 255, 255, 0.8));
+    opacity: 0;
+  }
+}
+
+/* Stardust Wish Float-Up Animation */
+@keyframes wishFloatUpStardust {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  45% {
+    transform: translateY(-24px) scale(1.02);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.6));
+  }
+  100% {
+    transform: translateY(-64px) scale(0.92);
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+.animate-wish-float-up {
+  animation: wishFloatUpStardust 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+/* White flash portal transition to slide 4 */
+@keyframes goldenPortalFlash {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-shake {
+  animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.animate-leaf-sway {
+  animation: leafSway 4s ease-in-out infinite alternate;
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* ================= SLIDE 3 REALISTIC CART-PUSHING CAT ================= */
+@keyframes cartCatLegWalkA {
+  0%, 100% {
+    transform: rotate(-16deg);
+  }
+  50% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes cartCatLegWalkB {
+  0%, 100% {
+    transform: rotate(18deg);
+  }
+  50% {
+    transform: rotate(-16deg);
+  }
+}
+
+@keyframes cartCatPushBob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes realisticCatTailWag {
+  0%, 100% {
+    transform: rotate(-14deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes catSubtleBreathe {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.015, 1.01);
+  }
+}
+
+.animate-cart-cat-leg-a {
+  transform-origin: 52px 308px;
+  animation: cartCatLegWalkA 0.65s ease-in-out infinite;
+}
+
+.animate-cart-cat-leg-b {
+  transform-origin: 44px 308px;
+  animation: cartCatLegWalkB 0.65s ease-in-out infinite;
+}
+
+.animate-cart-cat-bob {
+  animation: cartCatPushBob 0.325s ease-in-out infinite;
+}
+
+.animate-realistic-cat-tail {
+  transform-origin: 0px 0px;
+  animation: realisticCatTailWag 2.5s ease-in-out infinite;
+}
+
+.animate-cat-subtle-breathe {
+  transform-origin: 85px 300px;
+  animation: catSubtleBreathe 3.5s ease-in-out infinite;
+}
+
+.animate-cat-walk {
+  animation: catWalk 0.9s ease-in-out infinite;
+}
+
+.animate-tail-sway {
+  animation: tailSway 2.5s ease-in-out infinite;
+}
+
+.animate-spin-wheel {
+  animation: wheelSpin 4s linear infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-vault-door {
+  animation: vaultDoorSwing 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+.animate-dial-spin {
+  animation: dialSpin 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-chamber-light {
+  animation: chamberLightBeam 1.2s ease-out forwards;
+}
+
+.animate-envelope-emerge {
+  animation: envelopeEmerge 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-vault-pushin {
+  animation: vaultPushIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ================= SLIDE 3 KAWAII CART-PUSHING CAT ================= */
+@keyframes kawaiiCatLegWalkA {
+  0%, 100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes kawaiiCatLegWalkB {
+  0%, 100% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes kawaiiCatPushBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes cartTrolleyBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5px);
+  }
+}
+
+@keyframes kawaiiCatTailWag {
+  0%, 100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes kawaiiCatBreathe {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.02, 1.015);
+  }
+}
+
+@keyframes kawaiiChibiStepA {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes kawaiiChibiStepB {
+  0%, 100% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+/* ================= SYNCHRONIZED CHIBI WALKING (4.5s EXACT MATCH WITH CART & WHEELS) ================= */
+@keyframes catSyncWalkLeft {
+  0% { transform: translateY(0) rotate(0deg); }
+  2% { transform: translateY(-3.6px) rotate(-6deg); }
+  4.5% { transform: translateY(0) rotate(0deg); }
+  7% { transform: translateY(-3.6px) rotate(-6deg); }
+  9.5% { transform: translateY(0) rotate(0deg); }
+  12% { transform: translateY(-3.6px) rotate(-6deg); }
+  14.5% { transform: translateY(0) rotate(0deg); }
+  17.5% { transform: translateY(-3.6px) rotate(-6deg); }
+  20.5% { transform: translateY(0) rotate(0deg); }
+  24% { transform: translateY(-3.6px) rotate(-6deg); }
+  27.5% { transform: translateY(0) rotate(0deg); }
+  31.5% { transform: translateY(-3.5px) rotate(-5deg); }
+  35.5% { transform: translateY(0) rotate(0deg); }
+  40% { transform: translateY(-3.4px) rotate(-5deg); }
+  44.5% { transform: translateY(0) rotate(0deg); }
+  49.5% { transform: translateY(-3.2px) rotate(-4.5deg); }
+  54.5% { transform: translateY(0) rotate(0deg); }
+  60.5% { transform: translateY(-3px) rotate(-4deg); }
+  66.5% { transform: translateY(0) rotate(0deg); }
+  73.5% { transform: translateY(-2.4px) rotate(-3deg); }
+  80.5% { transform: translateY(0) rotate(0deg); }
+  88% { transform: translateY(-1.5px) rotate(-2deg); }
+  94.5% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes catSyncWalkRight {
+  0% { transform: translateY(-3.6px) rotate(-6deg); }
+  2% { transform: translateY(0) rotate(0deg); }
+  4.5% { transform: translateY(-3.6px) rotate(-6deg); }
+  7% { transform: translateY(0) rotate(0deg); }
+  9.5% { transform: translateY(-3.6px) rotate(-6deg); }
+  12% { transform: translateY(0) rotate(0deg); }
+  14.5% { transform: translateY(-3.6px) rotate(-6deg); }
+  17.5% { transform: translateY(0) rotate(0deg); }
+  20.5% { transform: translateY(-3.6px) rotate(-6deg); }
+  24% { transform: translateY(0) rotate(0deg); }
+  27.5% { transform: translateY(-3.6px) rotate(-6deg); }
+  31.5% { transform: translateY(0) rotate(0deg); }
+  35.5% { transform: translateY(-3.5px) rotate(-5deg); }
+  40% { transform: translateY(0) rotate(0deg); }
+  44.5% { transform: translateY(-3.4px) rotate(-5deg); }
+  49.5% { transform: translateY(0) rotate(0deg); }
+  54.5% { transform: translateY(-3.2px) rotate(-4.5deg); }
+  60.5% { transform: translateY(0) rotate(0deg); }
+  66.5% { transform: translateY(-3px) rotate(-4deg); }
+  73.5% { transform: translateY(0) rotate(0deg); }
+  80.5% { transform: translateY(-2.4px) rotate(-3deg); }
+  88% { transform: translateY(0) rotate(0deg); }
+  94.5% { transform: translateY(-1.5px) rotate(-2deg); }
+  97.5% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes catSyncWaddle {
+  0%, 4.5%, 9.5%, 14.5%, 20.5%, 27.5%, 35.5%, 44.5%, 54.5%, 66.5%, 80.5%, 94.5%, 100% {
+    transform: translateY(0);
+  }
+  2%, 7%, 12%, 17.5%, 24%, 31.5%, 40%, 49.5%, 60.5% {
+    transform: translateY(-1.6px);
+  }
+  73.5% {
+    transform: translateY(-1.2px);
+  }
+  88% {
+    transform: translateY(-0.7px);
+  }
+}
+
+@keyframes trolleySyncBob {
+  0%, 9%, 18%, 27%, 36%, 45%, 54%, 63%, 72%, 81%, 90%, 100% {
+    transform: translateY(0);
+  }
+  4.5%, 13.5%, 22.5%, 31.5%, 40.5%, 49.5% {
+    transform: translateY(-1.2px);
+  }
+  58.5%, 67.5% {
+    transform: translateY(-0.8px);
+  }
+  76.5%, 85.5% {
+    transform: translateY(-0.4px);
+  }
+}
+
+.animate-cat-sync-walk-left {
+  transform-origin: center bottom;
+  animation: catSyncWalkLeft 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-cat-sync-walk-right {
+  transform-origin: center bottom;
+  animation: catSyncWalkRight 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-cat-sync-waddle {
+  animation: catSyncWaddle 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-trolley-sync-bob {
+  animation: trolleySyncBob 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-kawaii-chibi-step-a {
+  transform-origin: center bottom;
+  animation: catSyncWalkLeft 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-kawaii-chibi-step-b {
+  transform-origin: center bottom;
+  animation: catSyncWalkRight 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-kawaii-leg-a {
+  transform-origin: 70px 314px;
+  animation: kawaiiCatLegWalkA 0.38s ease-in-out infinite;
+}
+
+.animate-kawaii-leg-b {
+  transform-origin: 58px 314px;
+  animation: kawaiiCatLegWalkB 0.38s ease-in-out infinite;
+}
+
+.animate-kawaii-cat-bob {
+  animation: catSyncWaddle 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-trolley-bob {
+  animation: trolleySyncBob 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-kawaii-cat-tail {
+  transform-origin: 0px 0px;
+  animation: kawaiiCatTailWag 2.2s ease-in-out infinite;
+}
+
+.animate-cat-happy-tail {
+  transform-origin: 0px 0px;
+  animation: kawaiiCatTailWag 0.75s ease-in-out infinite;
+}
+
+@keyframes floatHeartUp {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-6px, -18px) scale(1.25);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(6px, -38px) scale(1.1);
+  }
+  75% {
+    opacity: 0.8;
+    transform: translate(-4px, -58px) scale(0.95);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(2px, -78px) scale(0.7);
+  }
+}
+
+.animate-float-heart {
+  animation: floatHeartUp 2.8s ease-out forwards;
+}
+
+@keyframes knifeSwipeHint {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateY(10px);
+  }
+}
+
+.animate-swipe-down-hint {
+  animation: knifeSwipeHint 1.6s ease-in-out infinite;
+}
+
+.animate-kawaii-breathe {
+  transform-origin: 108px 290px;
+  animation: kawaiiCatBreathe 3s ease-in-out infinite;
+}
+
+.animate-cart-slow-enter {
+  animation: slowCartRollIn 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-wheel-rolling {
+  animation: wheelRollIn 4.5s cubic-bezier(0.18, 0.85, 0.25, 1) forwards;
+}
+
+.animate-blow-pulse {
+  animation: blowBtnPulse 2.2s ease-in-out infinite;
+}
+
+.animate-birthday-glow {
+  animation: happyBirthdayGlow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-knife-cut {
+  animation: knifeSliceDown 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-slice-fly {
+  animation: cakeSliceFlyToScreen 1.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  transform-origin: center center;
+  will-change: transform, filter, opacity;
+}
+
+.animate-portal-flash {
+  animation: goldenPortalFlash 0.7s ease-out forwards;
+}
+
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1, 1) rotate(0deg);
+  }
+  25% {
+    transform: scale(0.96, 1.06) rotate(-1.2deg);
+  }
+  50% {
+    transform: scale(1.04, 0.95) rotate(1deg);
+  }
+  75% {
+    transform: scale(0.98, 1.02) rotate(-0.8deg);
+  }
+}
+
+.animate-flame-flicker {
+  animation: flameFlicker 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes wildFlameFlicker {
+  0% {
+    transform: scale(1.08, 0.78) skewX(-12deg);
+    opacity: 0.95;
+    filter: brightness(1.2);
+  }
+  25% {
+    transform: scale(0.92, 1.14) skewX(-4deg);
+    opacity: 0.85;
+    filter: brightness(0.95);
+  }
+  50% {
+    transform: scale(1.22, 0.68) skewX(-18deg);
+    opacity: 0.98;
+    filter: brightness(1.3);
+  }
+  75% {
+    transform: scale(0.88, 1.05) skewX(-8deg);
+    opacity: 0.8;
+    filter: brightness(0.9);
+  }
+  100% {
+    transform: scale(1.15, 0.74) skewX(-14deg);
+    opacity: 0.92;
+    filter: brightness(1.15);
+  }
+}
+
+.animate-flame-wild-flicker {
+  animation: wildFlameFlicker 0.08s ease-in-out infinite alternate;
+}
+
+@keyframes sapFlow {
+  0% {
+    stroke-dashoffset: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lanternSwing {
+  0%, 100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes runeHeartbeat {
+  0%, 100% {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.4));
+  }
+  50% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.9));
+  }
+}
+
+@keyframes astralRingSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes astralRingReverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes catBreathe {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.02, 0.98);
+  }
+}
+
+.animate-sap-flow {
+  stroke-dasharray: 20, 10;
+  animation: sapFlow 8s linear infinite;
+}
+
+.animate-lantern-swing {
+  transform-origin: top center;
+  animation: lanternSwing 3.5s ease-in-out infinite;
+}
+
+.animate-lantern-swing-slow {
+  transform-origin: top center;
+  animation: lanternSwing 4.5s ease-in-out infinite alternate;
+}
+
+.animate-rune-pulse {
+  animation: runeHeartbeat 3.2s ease-in-out infinite;
+}
+
+.animate-astral-spin {
+  animation: astralRingSpin 24s linear infinite;
+}
+
+.animate-astral-spin-reverse {
+  animation: astralRingReverse 18s linear infinite;
+}
+
+.animate-cat-sleep {
+  transform-origin: center bottom;
+  animation: catBreathe 3s ease-in-out infinite;
+}
+
+/* ================= CAT WALKING CYCLE ANIMATIONS ================= */
+@keyframes catLegWalkA {
+  0%, 100% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes catLegWalkB {
+  0%, 100% {
+    transform: rotate(18deg);
+  }
+  50% {
+    transform: rotate(-18deg);
+  }
+}
+
+@keyframes catTailSway {
+  0%, 100% {
+    transform: rotate(-14deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes catBodyBob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.animate-cat-leg-a {
+  transform-origin: 0px 0px;
+  animation: catLegWalkA 0.65s ease-in-out infinite;
+}
+
+.animate-cat-leg-b {
+  transform-origin: 0px 0px;
+  animation: catLegWalkB 0.65s ease-in-out infinite;
+}
+
+.animate-cat-tail-sway {
+  transform-origin: 0px 0px;
+  animation: catTailSway 2.4s ease-in-out infinite;
+}
+
+.animate-cat-body-bob {
+  animation: catBodyBob 0.325s ease-in-out infinite;
+}
+
+/* ================= 3 CATS WALKING PATROL AROUND TREE (FLUID 3D PERSPECTIVE TURNAROUND) ================= */
+/* Cat 1: Ginger Tabby strolling along root path */
+@keyframes catPatrolGinger {
+  0% { transform: translate(520px, 608px); }
+  43% { transform: translate(790px, 608px); }
+  50% { transform: translate(790px, 608px); }
+  93% { transform: translate(520px, 608px); }
+  100% { transform: translate(520px, 608px); }
+}
+
+@keyframes catTurnSmoothGinger {
+  0%, 42% {
+    transform: scale(0.72, 0.72);
+  }
+  43% {
+    transform: scale(0.52, 0.72);
+  }
+  44.5% {
+    transform: scale(0.20, 0.72) translateY(-1px);
+  }
+  46% {
+    transform: scale(-0.05, 0.72) translateY(-1.5px);
+  }
+  47.5% {
+    transform: scale(-0.35, 0.72) translateY(-0.5px);
+  }
+  49% {
+    transform: scale(-0.58, 0.72);
+  }
+  50%, 92% {
+    transform: scale(-0.72, 0.72);
+  }
+  93% {
+    transform: scale(-0.52, 0.72);
+  }
+  94.5% {
+    transform: scale(-0.20, 0.72) translateY(-1px);
+  }
+  96% {
+    transform: scale(0.05, 0.72) translateY(-1.5px);
+  }
+  97.5% {
+    transform: scale(0.35, 0.72) translateY(-0.5px);
+  }
+  99% {
+    transform: scale(0.58, 0.72);
+  }
+  100% {
+    transform: scale(0.72, 0.72);
+  }
+}
+
+/* Cat 2: Tuxedo Cat */
+@keyframes catPatrolTuxedo {
+  0% { transform: translate(880px, 622px); }
+  43% { transform: translate(640px, 622px); }
+  50% { transform: translate(640px, 622px); }
+  93% { transform: translate(880px, 622px); }
+  100% { transform: translate(880px, 622px); }
+}
+
+@keyframes catTurnSmoothTuxedo {
+  0%, 42% {
+    transform: scale(-0.68, 0.68);
+  }
+  43% {
+    transform: scale(-0.48, 0.68);
+  }
+  44.5% {
+    transform: scale(-0.18, 0.68) translateY(-1px);
+  }
+  46% {
+    transform: scale(0.05, 0.68) translateY(-1.5px);
+  }
+  47.5% {
+    transform: scale(0.32, 0.68) translateY(-0.5px);
+  }
+  49% {
+    transform: scale(0.55, 0.68);
+  }
+  50%, 92% {
+    transform: scale(0.68, 0.68);
+  }
+  93% {
+    transform: scale(0.48, 0.68);
+  }
+  94.5% {
+    transform: scale(0.18, 0.68) translateY(-1px);
+  }
+  96% {
+    transform: scale(-0.05, 0.68) translateY(-1.5px);
+  }
+  97.5% {
+    transform: scale(-0.32, 0.68) translateY(-0.5px);
+  }
+  99% {
+    transform: scale(-0.55, 0.68);
+  }
+  100% {
+    transform: scale(-0.68, 0.68);
+  }
+}
+
+/* Cat 3: Calico Cat */
+@keyframes catPatrolCalico {
+  0% { transform: translate(390px, 598px); }
+  43% { transform: translate(710px, 598px); }
+  50% { transform: translate(710px, 598px); }
+  93% { transform: translate(390px, 598px); }
+  100% { transform: translate(390px, 598px); }
+}
+
+@keyframes catTurnSmoothCalico {
+  0%, 42% {
+    transform: scale(0.65, 0.65);
+  }
+  43% {
+    transform: scale(0.46, 0.65);
+  }
+  44.5% {
+    transform: scale(0.18, 0.65) translateY(-1px);
+  }
+  46% {
+    transform: scale(-0.05, 0.65) translateY(-1.5px);
+  }
+  47.5% {
+    transform: scale(-0.32, 0.65) translateY(-0.5px);
+  }
+  49% {
+    transform: scale(-0.52, 0.65);
+  }
+  50%, 92% {
+    transform: scale(-0.65, 0.65);
+  }
+  93% {
+    transform: scale(-0.46, 0.65);
+  }
+  94.5% {
+    transform: scale(-0.18, 0.65) translateY(-1px);
+  }
+  96% {
+    transform: scale(0.05, 0.65) translateY(-1.5px);
+  }
+  97.5% {
+    transform: scale(0.32, 0.65) translateY(-0.5px);
+  }
+  99% {
+    transform: scale(0.52, 0.65);
+  }
+  100% {
+    transform: scale(0.65, 0.65);
+  }
+}
+
+.animate-cat-patrol-ginger {
+  animation: catPatrolGinger 15s linear infinite;
+}
+.animate-cat-turn-ginger {
+  animation: catTurnSmoothGinger 15s linear infinite;
+  transform-origin: 0px 14px;
+}
+
+.animate-cat-patrol-tuxedo {
+  animation: catPatrolTuxedo 12.5s linear infinite;
+}
+.animate-cat-turn-tuxedo {
+  animation: catTurnSmoothTuxedo 12.5s linear infinite;
+  transform-origin: 0px 14px;
+}
+
+.animate-cat-patrol-calico {
+  animation: catPatrolCalico 17.5s linear infinite;
+}
+.animate-cat-turn-calico {
+  animation: catTurnSmoothCalico 17.5s linear infinite;
+  transform-origin: 0px 14px;
+}
+
+/* Branch Cat Tail Sway & Playful Root Cat Animations */
+@keyframes branchTailSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes catPawBat {
+  0%, 100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  30% {
+    transform: rotate(-22deg) translate(-3px, -4px);
+  }
+  55% {
+    transform: rotate(12deg) translate(2px, 1px);
+  }
+  75% {
+    transform: rotate(-12deg) translate(-2px, -2px);
+  }
+}
+
+@keyframes playfulFireflyBob {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(5px, -7px);
+  }
+  70% {
+    transform: translate(-4px, 3px);
+  }
+}
+
+.animate-branch-tail-sway {
+  animation: branchTailSway 3.6s ease-in-out infinite;
+  transform-origin: 0px 0px;
+}
+
+.animate-cat-paw-bat {
+  animation: catPawBat 2.4s ease-in-out infinite;
+  transform-origin: 0px 0px;
+}
+
+.animate-playful-firefly-bob {
+  animation: playfulFireflyBob 2.6s ease-in-out infinite;
+}
+
+/* ================= CLOUD SLEEPING CAT & BRANCH LEAVES ANIMATIONS ================= */
+@keyframes sleepBubbleAscend1 {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 0px) scale(0.35);
+  }
+  25% {
+    opacity: 0.95;
+    transform: translate(-3px, -10px) scale(0.7);
+  }
+  75% {
+    opacity: 0.85;
+    transform: translate(-6px, -24px) scale(0.95);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-8px, -36px) scale(1.1);
+  }
+}
+
+@keyframes sleepBubbleAscend2 {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 0px) scale(0.35);
+  }
+  25% {
+    opacity: 0.95;
+    transform: translate(-4px, -16px) scale(0.8);
+  }
+  75% {
+    opacity: 0.9;
+    transform: translate(-9px, -38px) scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-12px, -54px) scale(1.3);
+  }
+}
+
+@keyframes sleepBubbleAscend3 {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 0px) scale(0.35);
+  }
+  25% {
+    opacity: 0.95;
+    transform: translate(-6px, -22px) scale(0.95);
+  }
+  75% {
+    opacity: 0.95;
+    transform: translate(-14px, -52px) scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-18px, -72px) scale(1.5);
+  }
+}
+
+.animate-sleep-bubble-1 {
+  animation: sleepBubbleAscend1 3.6s ease-out infinite;
+}
+
+.animate-sleep-bubble-2 {
+  animation: sleepBubbleAscend2 3.6s ease-out 1.2s infinite;
+}
+
+.animate-sleep-bubble-3 {
+  animation: sleepBubbleAscend3 3.6s ease-out 2.4s infinite;
+}
+
+@keyframes cloudGentlyFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.animate-cloud-float {
+  animation: cloudGentlyFloat 4.8s ease-in-out infinite;
+}
+
+@keyframes leafHangSway {
+  0% {
+    transform: rotate(-4.5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.animate-leaf-hang-sway {
+  transform-origin: 0px 0px;
+  animation: leafHangSway 3.8s ease-in-out infinite alternate;
+}
+
+@keyframes scrollUnfold3D {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(22deg) scale(0.78) translateY(35px);
+    filter: blur(6px);
+  }
+  65% {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(-3deg) scale(1.02) translateY(-2px);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes scrollFoldOut {
+  0% {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(15deg) scale(0.88) translateY(20px);
+  }
+}
+
+.animate-scroll-unfold {
+  animation: scrollUnfold3D 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: center center;
+}
+
+.animate-scroll-foldout {
+  animation: scrollFoldOut 0.28s ease-in forwards;
+}
+
+/* ================= PRACTICAL NATURAL FELINE PLAY AT TREE BASE ================= */
+@keyframes naturalPlayfulCatGrounded {
+  /* 0-14%: Calm low crouch & stealth observation */
+  0%, 12% {
+    transform: translate(442px, 606px);
+  }
+  /* 15-26%: Sneaking / running forward after firefly (dhourano / stalk forward) */
+  18% {
+    transform: translate(436px, 606px);
+  }
+  24% {
+    transform: translate(428px, 606px);
+  }
+  /* 28-36%: Shifting weight side-to-side & haunch wiggle (shorte chawa / readying pounce) */
+  30% {
+    transform: translate(429px, 607px);
+  }
+  34% {
+    transform: translate(427px, 605px);
+  }
+  /* 38-46%: Natural playful jump/spring toward firefly (jump kora - realistic 14px lift) */
+  40% {
+    transform: translate(420px, 595px);
+  }
+  43% {
+    transform: translate(412px, 592px);
+  }
+  46% {
+    transform: translate(406px, 598px);
+  }
+  /* 48-66%: Touchdown on moss, batting & swiping with paw to catch firefly (thaba dewa) */
+  49%, 66% {
+    transform: translate(404px, 606px);
+  }
+  /* 70-84%: Satisfied small step-back to starting position */
+  74% {
+    transform: translate(418px, 606px);
+  }
+  84% {
+    transform: translate(436px, 606px);
+  }
+  92%, 100% {
+    transform: translate(442px, 606px);
+  }
+}
+
+@keyframes naturalPlayfulCatBody {
+  /* Dynamic realistic feline spine flexion during run, wiggle, jump & bat */
+  0%, 12% {
+    transform: scale(1, 1) rotate(0deg);
+  }
+  /* Stalking forward */
+  18%, 24% {
+    transform: scale(1.02, 0.98) rotate(-2deg);
+  }
+  /* Shifting & haunch wiggle */
+  30% {
+    transform: scale(0.98, 1.02) rotate(1.5deg);
+  }
+  34% {
+    transform: scale(1.01, 0.99) rotate(-1.5deg);
+  }
+  /* Jump launch & apex */
+  40% {
+    transform: scale(1.05, 0.95) rotate(-6deg);
+  }
+  43% {
+    transform: scale(1.02, 0.98) rotate(-3deg);
+  }
+  /* Soft landing absorption */
+  48% {
+    transform: scale(1.04, 0.96) rotate(1deg);
+  }
+  50%, 66% {
+    transform: scale(1, 1) rotate(0deg);
+  }
+  /* Step back */
+  74%, 84% {
+    transform: scale(0.98, 1.01) rotate(2deg);
+  }
+  92%, 100% {
+    transform: scale(1, 1) rotate(0deg);
+  }
+}
+
+@keyframes naturalPlayfulCatPaw {
+  /* Paw resting on moss */
+  0%, 38% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  /* Preparing during jump */
+  43% {
+    transform: rotate(-10deg) translate(-2px, -3px);
+  }
+  /* First swipe / thaba at firefly */
+  50% {
+    transform: rotate(-26deg) translate(-4px, -6px);
+  }
+  /* Recoil */
+  54% {
+    transform: rotate(4deg) translate(1px, 1px);
+  }
+  /* Second quick bat / thaba */
+  58% {
+    transform: rotate(-22deg) translate(-3px, -5px);
+  }
+  /* Return to ground */
+  64%, 100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+}
+
+@keyframes naturalLowFireflyDrift {
+  /* Firefly fluttering near the moss, dodging the kitten's playful swat */
+  0%, 15% {
+    transform: translate(386px, 594px);
+  }
+  /* Darting slightly up as cat stalks */
+  25% {
+    transform: translate(382px, 588px);
+  }
+  35% {
+    transform: translate(380px, 584px);
+  }
+  /* Fluttering higher as cat jumps towards it */
+  43% {
+    transform: translate(378px, 574px);
+  }
+  /* Dodging the paw swats! */
+  50% {
+    transform: translate(374px, 568px);
+  }
+  58% {
+    transform: translate(376px, 572px);
+  }
+  /* Drifting gently back down as cat steps back */
+  72% {
+    transform: translate(382px, 586px);
+  }
+  85%, 100% {
+    transform: translate(386px, 594px);
+  }
+}
+
+.animate-cat-chase-run {
+  animation: naturalPlayfulCatGrounded 7.2s ease-in-out infinite;
+}
+
+.animate-cat-chase-body {
+  animation: naturalPlayfulCatBody 7.2s ease-in-out infinite;
+  transform-origin: 0px 10px;
+}
+
+.animate-cat-chase-paw {
+  animation: naturalPlayfulCatPaw 7.2s ease-in-out infinite;
+  transform-origin: 0px 0px;
+}
+
+.animate-cat-chase-firefly {
+  animation: naturalLowFireflyDrift 7.2s ease-in-out infinite;
+}
+
+

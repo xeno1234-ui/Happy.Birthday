@@ -1,0 +1,13 @@
+{
+  "entities": {
+    "Wish": {
+      "collection": "wishes",
+      "fields": {
+        "wish": { "type": "string", "required": true },
+        "timestamp": { "type": "number", "required": true },
+        "dateStr": { "type": "string", "required": true },
+        "authorId": { "type": "string", "required": false }
+      }
+    }
+  }
+}
